@@ -26,6 +26,22 @@ public class ArticleController {
         return "articles/new";
     }
 
+    @GetMapping("/articles/list")
+    public String listArticles(Model model) {
+
+        // 1. id를 조회해 데이터 가져오기
+        //List<Article> articleEntityList = (List<Article>) articleRepository.findAll();
+        ArrayList<Article> articleEntityList = articleRepository.findAll();
+
+
+        // 2. 모델에 데이터 등록하기
+        model.addAttribute("articleList", articleEntityList);
+
+        // 3. 뷰 페이지 반환하기
+        return "articles/list";
+
+    }
+
     @PostMapping("/articles/create")
     public String createArticle(ArticleForm form) {
         log.info(form.toString());
@@ -37,7 +53,7 @@ public class ArticleController {
         Article saved = articleRepository.save(article);
         log.info(saved.toString()); // article이 DB에 잘 저장되는지 확인 출력
 
-        return "";
+        return "redirect:/articles/" + saved.getId();
     }
 
 
@@ -54,19 +70,40 @@ public class ArticleController {
         return "articles/show";
     }
 
-    @GetMapping("/articles/list")
-    public String listArticles(Model model) {
+    @GetMapping("/articles/{id}/edit")
+    public String edit(@PathVariable Long id, Model model) {
 
-        // 1. id를 조회해 데이터 가져오기
-        //List<Article> articleEntityList = (List<Article>) articleRepository.findAll();
-        ArrayList<Article> articleEntityList = articleRepository.findAll();
-
+        // 1. 수정할 데이터 가져오기
+        Article articleEntity = articleRepository.findById(id).orElse(null);
 
         // 2. 모델에 데이터 등록하기
-        model.addAttribute("articleList", articleEntityList);
+        model.addAttribute("article", articleEntity);
 
-        // 3. 뷰 페이지 반환하기
-        return "articles/list";
-
+        // 3. 뷰 페이지 설정하기
+        return "articles/edit";
     }
+
+    @PostMapping("/articles/update")
+    public String update(ArticleForm form) {
+        log.info(form.toString());
+
+        // 1. DTO를 엔티티로 변환하기
+        Article articleEntity = form.toEntity();
+
+        // 2. 엔티티를 DB에 저장하기
+        // 2-1. DB에서 기존 데이터 가져오기
+        Article target = articleRepository.findById(articleEntity.getId()).orElse(null);
+
+        // 2-2. 기존 데이터 값을 갱신하기
+        if(target != null) {
+            articleRepository.save(articleEntity);
+        }
+
+        // 3. 수정 결과 페이지로 리다이렉트하기
+
+
+        return "redirect:/articles/" + articleEntity.getId();
+    }
+
+
 }
