@@ -3,11 +3,13 @@ package com.example.exercise.controller;
 import com.example.exercise.dto.ArticleForm;
 import com.example.exercise.entity.Article;
 import com.example.exercise.repository.ArticleRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+@Slf4j
 @Controller
 public class ArticleController {
     @Autowired
@@ -27,7 +29,8 @@ public class ArticleController {
 
         // 2. 리파지터리로 엔티티를 DB에 저장
         Article saved = articleRepository.save(article);
-        System.out.println(saved.toString());
+        // System.out.println(saved.toString());
+        log.info(saved.toString());
 
         return "";
     }

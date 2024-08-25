@@ -35,8 +35,11 @@ DTO를 엔티티로 변환한 후 리파지터리를 이용해 엔티티를 DB�
 </details>
 <br>
 <details>
-  <summary>Click to toggle</summary>
-  This is the content that can be toggled. It will appear or disappear when you click on "Click to toggle".
+  <summary>롬복이란</summary>
+  코드를 간소화해 주는 라이브러리이다.   
+  개발하다 보면 getter(), setter(), constructor(), toString()과 같은 필수 메서드를 사용하기 마련인데요. 이를 매번 작성하는 것은 생각보다 번거롭습니다. 스마트하지만 게으른 개발자들은 이런 반복을 없애려 했고, 그래서 나온 도구가 바로 롬복입니다.   
+  <br>
+  @AllArgsConstructor, @ToString의 구현 방식에 대해 알아봐도 좋을 것 같다.
 </details>
 <br>
 <details>
