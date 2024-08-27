@@ -97,6 +97,79 @@ myCar.stop();
 
 </details>
 <br>
+
+### CRUD 정리
+
+<details>
+  <summary>최초 작성 순서(초기)</summary>
+  이 방법은 실제 작업과 다르게 제가 이해하기 위해 작성했습니다. (POST 기준)
+
+1. 어떤 페이지를 만들 것인지 컨트롤러에 작성한다.
+2. 해당 화면에 들어가는 entity를 정의한다.
+3. entity에 필요한 dto를 정의한다.
+   4. DB에 접근하기 위해 dto를 엔티티로 변환하는 코드를 만든다. 
+4. 데이터베이스 접근에 필요한 리포지토리를 정의한다.
+5. 엔티티로 변환하고 그 값을 리포지토리를 통해 데이터를 저장한다.
+</details>
+<br>
+
+<details>
+  <summary>데이터 조회 과정</summary>
+
+1. 사용자가 HTML에서 데이터를 조회해 달라고 요청한다.
+2. 컨트롤러가 요청을 받아 해당 URL에서 찾으려는 정보를 리파지토리에 전달한다.
+3. 리파지토리는 정보를 가지고 DB에 데이터 조회를 요청한다.
+4. DB는 해당 데이터를 찾아 이를 엔티티로 반환한다.
+5. 반환된 엔티티가 모델을 통해 뷰 템플릿으로 전달한다.
+</details>
+<br>
+<details>
+  <summary>Click to toggle</summary>
+  This is the content that can be toggled. It will appear or disappear when you click on "Click to toggle".
+</details>
+<br>
+<details>
+  <summary>Click to toggle</summary>
+  This is the content that can be toggled. It will appear or disappear when you click on "Click to toggle".
+</details>
+<br>
+<details>
+  <summary>Click to toggle</summary>
+  This is the content that can be toggled. It will appear or disappear when you click on "Click to toggle".
+</details>
+<br>
+<details>
+  <summary>Click to toggle</summary>
+  This is the content that can be toggled. It will appear or disappear when you click on "Click to toggle".
+</details>
+
+<br>
+<details>
+  <summary>Click to toggle</summary>
+  This is the content that can be toggled. It will appear or disappear when you click on "Click to toggle".
+</details>
+
+<br>
+<details>
+  <summary>Click to toggle</summary>
+  This is the content that can be toggled. It will appear or disappear when you click on "Click to toggle".
+</details>
+<br>
+<details>
+  <summary>Click to toggle</summary>
+  This is the content that can be toggled. It will appear or disappear when you click on "Click to toggle".
+</details>
+<br>
+<details>
+  <summary>Click to toggle</summary>
+  This is the content that can be toggled. It will appear or disappear when you click on "Click to toggle".
+</details>
+<br>
+<details>
+  <summary>Click to toggle</summary>
+  This is the content that can be toggled. It will appear or disappear when you click on "Click to toggle".
+</details>
+<br>
 <details>
   <summary>Click to toggle</summary>
   This is the content that can be toggled. It will appear or disappear when you click on "Click to toggle".
