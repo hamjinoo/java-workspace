@@ -34,6 +34,9 @@ DTO를 엔티티로 변환한 후 리파지터리를 이용해 엔티티를 DB�
 외부에서 만들어진 객체를 필요한 곳으로 가져오는 기법을 의존성 주입(DI, Dependency Injection)이라고 합니다. 스프링 부트는 @Autowired 어노테이션으로 의존성 주입을 할 수 있습니다.
 </details>
 <br>
+
+### 롬복
+
 <details>
   <summary>롬복이란</summary>
   코드를 간소화해 주는 라이브러리이다.   
@@ -43,13 +46,65 @@ DTO를 엔티티로 변환한 후 리파지터리를 이용해 엔티티를 DB�
 </details>
 <br>
 <details>
-  <summary>Click to toggle</summary>
-  This is the content that can be toggled. It will appear or disappear when you click on "Click to toggle".
+  <summary>@AllArgsConstructor</summary>
+
+- 이 애너테이션은 클래스의 모든 필드를 인자로 하는 생성자를 생성합니다.
+- 생성자를 수동으로 작성하는 번거로움을 줄여줍니다.
+
+```java
+@AllArgsConstructor
+public class Person {
+    private String name;
+    private int age;
+    // getters and setters
+}
+
+//사용했을때
+public class Person {
+    private String name;
+    private int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+```
+
 </details>
 <br>
 <details>
-  <summary>Click to toggle</summary>
-  This is the content that can be toggled. It will appear or disappear when you click on "Click to toggle".
+  <summary>@NoArgsConstructor</summary>
+
+- 파라미터가 없는 디폴트 생성자를 자동으로 생성한다. 
+- 이 어노테이션을 사용하면, 클래스에 명시적으로 선언된 생성자가 없더라도 인스턴스를 생성할 수 있다.
+```java
+@NoArgsConstructor
+    public class Person {
+    private String name;
+    private int age;
+    // getters and setters
+}
+//NoArgsConstructor 사용하면 Java 코드는 다음과 같아진다.
+
+public class Person {
+private String name;
+private int age;
+
+	public Person(){}
+}
+```
+</details>
+<br>
+<details>
+  <summary>@PathVariable</summary>
+  URL 요청으로 들어온 전달값을 컨트롤러의 매개변수로 가져오는 어노테이션입니다.
+</details>
+<br>
+<details>
+  <summary>Optional 사용방법</summary>
+  Optional은 Java 8에서 도입된 유틸리티 클래스로, 객체의 존재 여부를 나타내는 컨테이너입니다. 
+Optional을 사용하면 null을 직접 다루는 것보다 더 안전하게 코드를 작성할 수 있으며, NullPointerException을 피할 수 있습니다.
 </details>
 <br>
 <details>

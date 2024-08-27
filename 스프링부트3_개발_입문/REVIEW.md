@@ -124,8 +124,12 @@ myCar.stop();
 </details>
 <br>
 <details>
-  <summary>Click to toggle</summary>
-  This is the content that can be toggled. It will appear or disappear when you click on "Click to toggle".
+  <summary>데이터 조회 과정</summary>
+  
+1. id를 리포지토리에서 조회해 데이터 가져오기
+2. 모델에 데이터 등록하기 
+   3. 등록 이유: 데이터를 모델에 등록하는 이유는 MVC 패턴에 따라 조회한 데이터를 뷰 페이지에서 사용하기 위해서)
+3. 뷰 페이지 반환하기
 </details>
 <br>
 <details>
