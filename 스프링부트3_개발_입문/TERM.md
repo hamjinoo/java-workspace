@@ -4,7 +4,7 @@
 </details>
 <br>
 <details>
-  <summary>DTO에 역할</summary>
+  <summary>DTO의 역할</summary>
 폼 데이터에 실어 보낸 데이터는 서버의 컨트롤러가 객체에 담아 받는데, 이 객체를 DTO(Data Transfer Object)라고 합니다. DTO로 받은 데이터는 최종적으로 데이터베이스(DB, Database)에 저장됩니다.
 </details>   
 <br>
@@ -14,12 +14,12 @@ DTO를 엔티티로 변환한 후 리파지터리를 이용해 엔티티를 DB�
 </details>   
 <br>
 <details>
-  <summary>엔티티에 역할</summary>
+  <summary>엔티티의 역할</summary>
   자바 객체를 DB가 이해할 수 있게 만든 것으로, 이를 기반으로 테이블이 만들어집니다.
 </details>
 <br>
 <details>
-  <summary>리포지토리에 역할</summary>
+  <summary>리포지토리의 역할</summary>
   엔티티가 DB 속 테이블에 저장 및 관리될 수 있게 하는 인터페이스입니다.
 </details>
 <br>
