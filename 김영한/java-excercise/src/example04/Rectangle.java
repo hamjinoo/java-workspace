@@ -5,7 +5,7 @@ public class Rectangle {
     int width = 0;
     int height = 0;
 
-     int calculateArea() {
+    int calculateArea() {
         return width * height;
     }
     int calculatePerimeter() {
